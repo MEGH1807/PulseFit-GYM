@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore PulseFit Center's diverse class offerings including yoga, cardio, HIIT, strength training, and more.">
+    <title>Classes & Schedule - PulseFit Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-extended.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo"><i class="fas fa-dumbbell"></i><span>PULSE<strong>FIT</strong></span></div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="membership.html">MEMBERSHIP</a></li>
+                <li><a href="classes.html" class="active">CLASSES</a></li>
+                <li><a href="trainers.html">TRAINERS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="dashboard.html" class="dashboard-link"><i class="fas fa-user-circle"></i> DASHBOARD</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <h1 data-animate>FITNESS CLASSES</h1>
+            <p data-animate>Find Your Perfect Workout</p>
+        </div>
+    </section>
+
+    <section class="class-categories">
+        <div class="container">
+            <h2 class="section-title" data-animate>OUR CLASS OFFERINGS</h2>
+            <div class="categories-grid">
+                <div class="category-card" data-animate>
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop" alt="Yoga">
+                    <div class="category-overlay">
+                        <h3>YOGA</h3>
+                        <p>Flexibility • Balance • Mindfulness</p>
+                    </div>
+                </div>
+                <div class="category-card" data-animate>
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&h=400&fit=crop" alt="HIIT">
+                    <div class="category-overlay">
+                        <h3>HIIT</h3>
+                        <p>High Intensity • Fat Burning</p>
+                    </div>
+                </div>
+                <div class="category-card" data-animate>
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&h=400&fit=crop" alt="Strength">
+                    <div class="category-overlay">
+                        <h3>STRENGTH</h3>
+                        <p>Muscle Building • Power</p>
+                    </div>
+                </div>
+                <div class="category-card" data-animate>
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop" alt="Cardio">
+                    <div class="category-overlay">
+                        <h3>CARDIO</h3>
+                        <p>Endurance • Heart Health</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="schedule-section">
+        <div class="container">
+            <h2 class="section-title" data-animate>WEEKLY CLASS SCHEDULE</h2>
+            <div class="schedule-filter" data-animate>
+                <button class="filter-btn active" onclick="filterSchedule('all')">ALL</button>
+                <button class="filter-btn" onclick="filterSchedule('monday')">MON</button>
+                <button class="filter-btn" onclick="filterSchedule('tuesday')">TUE</button>
+                <button class="filter-btn" onclick="filterSchedule('wednesday')">WED</button>
+                <button class="filter-btn" onclick="filterSchedule('thursday')">THU</button>
+                <button class="filter-btn" onclick="filterSchedule('friday')">FRI</button>
+                <button class="filter-btn" onclick="filterSchedule('saturday')">SAT</button>
+                <button class="filter-btn" onclick="filterSchedule('sunday')">SUN</button>
+            </div>
+            <div class="schedule-container" data-animate id="scheduleContainer"></div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 data-animate>READY TO BOOK YOUR FIRST CLASS?</h2>
+            <p data-animate>Join today and get unlimited access to all our classes</p>
+            <a href="membership.html" class="cta-button large pulse-btn" data-animate>JOIN NOW</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo"><i class="fas fa-dumbbell"></i><span>PULSE<strong>FIT</strong></span></div>
+                    <p>Transform your body and elevate your life.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="classes.html">Classes</a></li>
+                        <li><a href="trainers.html">Trainers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Business Hours</h3>
+                    <ul class="hours-list">
+                        <li><span>Mon-Fri:</span> 5AM-11PM</li>
+                        <li><span>Sat:</span> 6AM-10PM</li>
+                        <li><span>Sun:</span> 7AM-9PM</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fitness Ave, NY 10001</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@pulsefitcenter.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PulseFit Center. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="chatbot-widget" id="chatbot">
+        <div class="chatbot-header" onclick="toggleChatbot()">
+            <i class="fas fa-comments"></i><span>Fitness Assistant</span><i class="fas fa-chevron-down" id="chatToggle"></i>
+        </div>
+        <div class="chatbot-body" id="chatbotBody">
+            <div class="chat-messages" id="chatMessages">
+                <div class="bot-message"><p>Hi! Ask me about classes or schedules!</p></div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Type your question..." onkeypress="handleChatEnter(event)">
+                <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+    <script src="script.js"></script>
+</body>
+</html>

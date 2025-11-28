@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fitness tips, workout guides, nutrition advice, and gym updates from PulseFit Center experts">
+    <meta name="keywords" content="fitness blog, workout tips, nutrition, health, gym news, PulseFit">
+    <meta name="author" content="PulseFit Center">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PulseFit Blog - Fitness Tips & Expert Advice">
+    <meta property="og:description" content="Expert fitness tips, workout guides, and nutrition advice">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=630&fit=crop">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="PulseFit Blog - Fitness Tips & Expert Advice">
+    <meta property="twitter:description" content="Expert fitness tips, workout guides, and nutrition advice">
+    
+    <title>Blog - PulseFit Center | Fitness Tips & Expert Advice</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-extended.css">
+    <link rel="stylesheet" href="blog-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "PulseFit Center Blog",
+        "description": "Fitness tips, workout guides, and nutrition advice",
+        "url": "https://pulsefitcenter.com/blog",
+        "publisher": {
+            "@type": "Organization",
+            "name": "PulseFit Center",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://pulsefitcenter.com/logo.png"
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-dumbbell" aria-hidden="true"></i>
+                <span>PULSE<strong>FIT</strong></span>
+            </div>
+            <ul class="nav-menu" id="navMenu" role="menubar">
+                <li role="none"><a href="index.html" role="menuitem">HOME</a></li>
+                <li role="none"><a href="about.html" role="menuitem">ABOUT</a></li>
+                <li role="none"><a href="membership.html" role="menuitem">MEMBERSHIP</a></li>
+                <li role="none"><a href="classes.html" role="menuitem">CLASSES</a></li>
+                <li role="none"><a href="trainers.html" role="menuitem">TRAINERS</a></li>
+                <li role="none"><a href="booking.html" role="menuitem">BOOK NOW</a></li>
+                <li role="none"><a href="blog.html" class="active" role="menuitem">BLOG</a></li>
+                <li role="none"><a href="contact.html" role="menuitem">CONTACT</a></li>
+                <li role="none"><a href="dashboard.html" class="dashboard-link" role="menuitem"><i class="fas fa-user-circle" aria-hidden="true"></i> DASHBOARD</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger" role="button" aria-label="Toggle navigation menu" aria-expanded="false" tabindex="0">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero blog-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>FITNESS INSIGHTS</h1>
+            <p>Expert tips, guides, and inspiration for your fitness journey</p>
+        </div>
+    </section>
+
+    <!-- Blog Container -->
+    <section class="blog-section">
+        <div class="container">
+            <!-- Search and Filter Bar -->
+            <div class="blog-controls">
+                <div class="search-container">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input type="search" 
+                           id="blogSearch" 
+                           placeholder="Search articles..." 
+                           aria-label="Search blog articles">
+                </div>
+                
+                <div class="filter-container">
+                    <label for="categoryFilter" class="sr-only">Filter by category</label>
+                    <select id="categoryFilter" aria-label="Filter by category">
+                        <option value="all">All Categories</option>
+                        <option value="workout">Workouts</option>
+                        <option value="nutrition">Nutrition</option>
+                        <option value="tips">Fitness Tips</option>
+                        <option value="news">Gym News</option>
+                        <option value="motivation">Motivation</option>
+                    </select>
+                    
+                    <label for="sortFilter" class="sr-only">Sort articles</label>
+                    <select id="sortFilter" aria-label="Sort articles">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="popular">Most Popular</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Featured Post -->
+            <div class="featured-post" id="featuredPost">
+                <!-- Featured post will be loaded by JavaScript -->
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="blog-grid" id="blogGrid">
+                <!-- Blog posts will be loaded by JavaScript -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button class="load-more-btn" id="loadMoreBtn">
+                    Load More Articles
+                    <i class="fas fa-arrow-down" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Subscription -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>STAY UPDATED</h2>
+                    <p>Subscribe to our newsletter for the latest fitness tips and gym updates</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm" novalidate>
+                    <div class="newsletter-input-group">
+                        <input type="email" 
+                               id="newsletterEmail" 
+                               placeholder="Enter your email" 
+                               required 
+                               aria-required="true"
+                               aria-label="Email address">
+                        <button type="submit" aria-label="Subscribe to newsletter">
+                            Subscribe
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <span class="error-message" role="alert"></span>
+                    <span class="success-message" role="status"></span>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Modal -->
+    <div class="modal" id="articleModal" role="dialog" aria-labelledby="articleTitle" aria-modal="true" hidden>
+        <div class="modal-content article-modal-content">
+            <button class="modal-close" aria-label="Close article">&times;</button>
+            <article class="article-full" id="articleContent">
+                <!-- Full article content will be loaded here -->
+            </article>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fas fa-dumbbell" aria-hidden="true"></i>
+                        <span>PULSE<strong>FIT</strong></span>
+                    </div>
+                    <p>Transform your body and elevate your life with professional training and expert guidance.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="classes.html">Classes</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Popular Topics</h3>
+                    <ul>
+                        <li><a href="#" onclick="filterByCategory('workout')">Workout Guides</a></li>
+                        <li><a href="#" onclick="filterByCategory('nutrition')">Nutrition Tips</a></li>
+                        <li><a href="#" onclick="filterByCategory('motivation')">Motivation</a></li>
+                        <li><a href="#" onclick="filterByCategory('tips')">Fitness Tips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 123 Fitness Avenue, New York, NY 10001</li>
+                        <li><i class="fas fa-phone" aria-hidden="true"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i> info@pulsefitcenter.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PulseFit Center. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="blog.js"></script>
+</body>
+</html>

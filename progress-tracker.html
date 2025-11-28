@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Track your fitness progress with detailed charts and analytics at PulseFit Center">
+    <title>Progress Tracker - PulseFit Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-extended.css">
+    <link rel="stylesheet" href="progress-tracker-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-dumbbell" aria-hidden="true"></i>
+                <span>PULSE<strong>FIT</strong></span>
+            </div>
+            <ul class="nav-menu" id="navMenu" role="menubar">
+                <li role="none"><a href="index.html" role="menuitem">HOME</a></li>
+                <li role="none"><a href="about.html" role="menuitem">ABOUT</a></li>
+                <li role="none"><a href="membership.html" role="menuitem">MEMBERSHIP</a></li>
+                <li role="none"><a href="classes.html" role="menuitem">CLASSES</a></li>
+                <li role="none"><a href="trainers.html" role="menuitem">TRAINERS</a></li>
+                <li role="none"><a href="booking.html" role="menuitem">BOOK NOW</a></li>
+                <li role="none"><a href="blog.html" role="menuitem">BLOG</a></li>
+                <li role="none"><a href="contact.html" role="menuitem">CONTACT</a></li>
+                <li role="none"><a href="dashboard.html" class="dashboard-link active" role="menuitem"><i class="fas fa-user-circle" aria-hidden="true"></i> DASHBOARD</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger" role="button" aria-label="Toggle navigation menu" aria-expanded="false" tabindex="0">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Progress Tracker Container -->
+    <div class="progress-tracker-container">
+        <!-- Sidebar -->
+        <aside class="tracker-sidebar">
+            <div class="user-summary">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop" alt="User profile" class="user-avatar">
+                <h3>Sarah Johnson</h3>
+                <p class="user-goal">Goal: Lose 20 lbs by Dec 2024</p>
+            </div>
+            
+            <nav class="tracker-nav" aria-label="Progress tracker navigation">
+                <a href="#overview" class="tracker-nav-item active" onclick="showTrackerSection('overview')">
+                    <i class="fas fa-chart-line" aria-hidden="true"></i> Overview
+                </a>
+                <a href="#workouts" class="tracker-nav-item" onclick="showTrackerSection('workouts')">
+                    <i class="fas fa-dumbbell" aria-hidden="true"></i> Workouts
+                </a>
+                <a href="#weight" class="tracker-nav-item" onclick="showTrackerSection('weight')">
+                    <i class="fas fa-weight" aria-hidden="true"></i> Weight
+                </a>
+                <a href="#measurements" class="tracker-nav-item" onclick="showTrackerSection('measurements')">
+                    <i class="fas fa-ruler" aria-hidden="true"></i> Measurements
+                </a>
+                <a href="#nutrition" class="tracker-nav-item" onclick="showTrackerSection('nutrition')">
+                    <i class="fas fa-utensils" aria-hidden="true"></i> Nutrition
+                </a>
+                <a href="#goals" class="tracker-nav-item" onclick="showTrackerSection('goals')">
+                    <i class="fas fa-bullseye" aria-hidden="true"></i> Goals
+                </a>
+                <a href="dashboard.html" class="tracker-nav-item">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Dashboard
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="tracker-main">
+            <!-- Overview Section -->
+            <section id="overview" class="tracker-section active">
+                <h1>Progress Overview</h1>
+                
+                <!-- Quick Stats -->
+                <div class="stats-overview">
+                    <div class="stat-box">
+                        <div class="stat-icon"><i class="fas fa-fire" aria-hidden="true"></i></div>
+                        <div class="stat-content">
+                            <span class="stat-label">This Week</span>
+                            <span class="stat-value">12 Workouts</span>
+                            <span class="stat-change positive">+3 from last week</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon"><i class="fas fa-weight" aria-hidden="true"></i></div>
+                        <div class="stat-content">
+                            <span class="stat-label">Weight Lost</span>
+                            <span class="stat-value">13 lbs</span>
+                            <span class="stat-change positive">65% to goal</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+                        <div class="stat-content">
+                            <span class="stat-label">Avg Calories/Day</span>
+                            <span class="stat-value">1,850</span>
+                            <span class="stat-change">On target</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon"><i class="fas fa-trophy" aria-hidden="true"></i></div>
+                        <div class="stat-content">
+                            <span class="stat-label">Streak</span>
+                            <span class="stat-value">15 Days</span>
+                            <span class="stat-change positive">Personal best!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Grid -->
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3>Weekly Activity</h3>
+                        <canvas id="weeklyActivityChart" role="img" aria-label="Weekly activity chart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Weight Progress</h3>
+                        <canvas id="weightProgressChart" role="img" aria-label="Weight progress chart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Workout Distribution</h3>
+                        <canvas id="workoutDistributionChart" role="img" aria-label="Workout type distribution"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Calories Burned</h3>
+                        <canvas id="caloriesBurnedChart" role="img" aria-label="Calories burned over time"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Workouts Section -->
+            <section id="workouts" class="tracker-section">
+                <h1>Workout Tracker</h1>
+                
+                <button class="add-entry-btn" onclick="showWorkoutForm()">
+                    <i class="fas fa-plus" aria-hidden="true"></i> Log Workout
+                </button>
+
+                <!-- Workout Entry Form -->
+                <div class="entry-form" id="workoutForm" hidden>
+                    <h3>Log New Workout</h3>
+                    <form id="workoutEntryForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="workoutDate">Date *</label>
+                                <input type="date" id="workoutDate" required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="workoutType">Workout Type *</label>
+                                <select id="workoutType" required aria-required="true">
+                                    <option value="">Select type</option>
+                                    <option value="strength">Strength Training</option>
+                                    <option value="cardio">Cardio</option>
+                                    <option value="hiit">HIIT</option>
+                                    <option value="yoga">Yoga</option>
+                                    <option value="sports">Sports</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="workoutDuration">Duration (minutes) *</label>
+                                <input type="number" id="workoutDuration" min="1" required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="workoutCalories">Calories Burned</label>
+                                <input type="number" id="workoutCalories" min="0">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="workoutNotes">Notes</label>
+                            <textarea id="workoutNotes" rows="3" placeholder="How did you feel? Any achievements?"></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Save Workout</button>
+                            <button type="button" class="btn-secondary" onclick="hideWorkoutForm()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Workout History -->
+                <div class="workout-history">
+                    <h3>Recent Workouts</h3>
+                    <div id="workoutHistoryList"></div>
+                </div>
+
+                <!-- Workout Stats Chart -->
+                <div class="chart-card">
+                    <h3>Monthly Workout Trends</h3>
+                    <canvas id="monthlyWorkoutChart" role="img" aria-label="Monthly workout trends"></canvas>
+                </div>
+            </section>
+
+            <!-- Weight Section -->
+            <section id="weight" class="tracker-section">
+                <h1>Weight Tracking</h1>
+                
+                <button class="add-entry-btn" onclick="showWeightForm()">
+                    <i class="fas fa-plus" aria-hidden="true"></i> Log Weight
+                </button>
+
+                <!-- Weight Entry Form -->
+                <div class="entry-form" id="weightForm" hidden>
+                    <h3>Log Weight Entry</h3>
+                    <form id="weightEntryForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="weightDate">Date *</label>
+                                <input type="date" id="weightDate" required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="weightValue">Weight (lbs) *</label>
+                                <input type="number" id="weightValue" step="0.1" min="0" required aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="weightNotes">Notes</label>
+                            <textarea id="weightNotes" rows="2" placeholder="Optional notes..."></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Save Entry</button>
+                            <button type="button" class="btn-secondary" onclick="hideWeightForm()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Weight Progress Card -->
+                <div class="progress-summary-card">
+                    <div class="progress-header">
+                        <h3>Weight Journey</h3>
+                        <div class="progress-stats-grid">
+                            <div>
+                                <span class="label">Starting</span>
+                                <span class="value">165 lbs</span>
+                            </div>
+                            <div>
+                                <span class="label">Current</span>
+                                <span class="value">152 lbs</span>
+                            </div>
+                            <div>
+                                <span class="label">Goal</span>
+                                <span class="value">145 lbs</span>
+                            </div>
+                            <div>
+                                <span class="label">Remaining</span>
+                                <span class="value">7 lbs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar-large">
+                        <div class="progress-fill-large" style="width: 65%">
+                            <span>65%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weight Chart -->
+                <div class="chart-card">
+                    <h3>Weight Over Time</h3>
+                    <canvas id="weightTrackingChart" role="img" aria-label="Weight tracking over time"></canvas>
+                </div>
+            </section>
+
+            <!-- Measurements Section -->
+            <section id="measurements" class="tracker-section">
+                <h1>Body Measurements</h1>
+                
+                <button class="add-entry-btn" onclick="showMeasurementForm()">
+                    <i class="fas fa-plus" aria-hidden="true"></i> Add Measurements
+                </button>
+
+                <!-- Measurements Table -->
+                <div class="measurements-table-container">
+                    <table class="measurements-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Chest</th>
+                                <th>Waist</th>
+                                <th>Hips</th>
+                                <th>Arms</th>
+                                <th>Thighs</th>
+                                <th>Body Fat %</th>
+                            </tr>
+                        </thead>
+                        <tbody id="measurementsTableBody">
+                            <!-- Data will be populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Measurements Chart -->
+                <div class="chart-card">
+                    <h3>Measurements Trend</h3>
+                    <canvas id="measurementsChart" role="img" aria-label="Body measurements trend"></canvas>
+                </div>
+            </section>
+
+            <!-- Nutrition Section -->
+            <section id="nutrition" class="tracker-section">
+                <h1>Nutrition Tracker</h1>
+                
+                <button class="add-entry-btn" onclick="showNutritionForm()">
+                    <i class="fas fa-plus" aria-hidden="true"></i> Log Meal
+                </button>
+
+                <!-- Daily Nutrition Summary -->
+                <div class="nutrition-summary">
+                    <h3>Today's Nutrition</h3>
+                    <div class="macro-circles">
+                        <div class="macro-circle">
+                            <svg viewBox="0 0 36 36">
+                                <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                      fill="none" stroke="#eee" stroke-width="3"/>
+                                <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                      fill="none" stroke="#ff4757" stroke-width="3"
+                                      stroke-dasharray="75, 100"/>
+                            </svg>
+                            <div class="macro-info">
+                                <span class="macro-value">150g</span>
+                                <span class="macro-label">Protein</span>
+                                <span class="macro-target">/ 200g</span>
+                            </div>
+                        </div>
+                        <div class="macro-circle">
+                            <svg viewBox="0 0 36 36">
+                                <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                      fill="none" stroke="#eee" stroke-width="3"/>
+                                <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                      fill="none" stroke="#3498db" stroke-width="3"
+                                      stroke-dasharray="60, 100"/>
+                            </svg>
+                            <div class="macro-info">
+                                <span class="macro-value">120g</span>
+                                <span class="macro-label">Carbs</span>
+                                <span class="macro-target">/ 200g</span>
+                            </div>
+                        </div>
+                        <div class="macro-circle">
+                            <svg viewBox="0 0 36 36">
+                                <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                      fill="none" stroke="#eee" stroke-width="3"/>
+                                <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                      fill="none" stroke="#27ae60" stroke-width="3"
+                                      stroke-dasharray="80, 100"/>
+                            </svg>
+                            <div class="macro-info">
+                                <span class="macro-value">48g</span>
+                                <span class="macro-label">Fats</span>
+                                <span class="macro-target">/ 60g</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calories-summary">
+                        <span class="calories-consumed">1,850 cal consumed</span>
+                        <span class="calories-target">/ 2,000 cal target</span>
+                    </div>
+                </div>
+
+                <!-- Nutrition Chart -->
+                <div class="chart-card">
+                    <h3>Weekly Calorie Intake</h3>
+                    <canvas id="nutritionChart" role="img" aria-label="Weekly calorie intake"></canvas>
+                </div>
+            </section>
+
+            <!-- Goals Section -->
+            <section id="goals" class="tracker-section">
+                <h1>Fitness Goals</h1>
+                
+                <button class="add-entry-btn" onclick="showGoalForm()">
+                    <i class="fas fa-plus" aria-hidden="true"></i> Add Goal
+                </button>
+
+                <!-- Goals Grid -->
+                <div class="goals-grid" id="goalsGrid">
+                    <!-- Goals will be populated by JS -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Load Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="script.js"></script>
+    <script src="progress-tracker.js"></script>
+</body>
+</html>

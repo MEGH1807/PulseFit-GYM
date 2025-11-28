@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Member Dashboard - Track your workouts and progress at PulseFit Center">
+    <title>Member Dashboard - PulseFit Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-extended.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo"><i class="fas fa-dumbbell"></i><span>PULSE<strong>FIT</strong></span></div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="membership.html">MEMBERSHIP</a></li>
+                <li><a href="classes.html">CLASSES</a></li>
+                <li><a href="trainers.html">TRAINERS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="dashboard.html" class="dashboard-link active"><i class="fas fa-user-circle"></i> DASHBOARD</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="dashboard-sidebar">
+            <div class="user-profile">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop" alt="User">
+                <h3>Welcome back,</h3>
+                <h2>Sarah Johnson</h2>
+                <p class="membership-badge">Premium Member</p>
+            </div>
+            <nav class="dashboard-nav">
+                <a href="#overview" class="dash-nav-item active" onclick="showSection('overview')"><i class="fas fa-home"></i> Overview</a>
+                <a href="#workouts" class="dash-nav-item" onclick="showSection('workouts')"><i class="fas fa-dumbbell"></i> My Workouts</a>
+                <a href="#classes" class="dash-nav-item" onclick="showSection('classes')"><i class="fas fa-calendar"></i> Booked Classes</a>
+                <a href="#progress" class="dash-nav-item" onclick="showSection('progress')"><i class="fas fa-chart-line"></i> Progress</a>
+                <a href="progress-tracker.html" class="dash-nav-item"><i class="fas fa-chart-bar"></i> Advanced Tracker</a>
+                <a href="booking.html" class="dash-nav-item"><i class="fas fa-calendar-check"></i> Book Classes</a>
+                <a href="#settings" class="dash-nav-item" onclick="showSection('settings')"><i class="fas fa-cog"></i> Settings</a>
+                <a href="index.html" class="dash-nav-item logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </div>
+
+        <div class="dashboard-main">
+            <!-- Overview Section -->
+            <section id="overview" class="dashboard-section active">
+                <h1>Dashboard Overview</h1>
+                <div class="stats-cards">
+                    <div class="stat-card-dash">
+                        <div class="stat-icon"><i class="fas fa-fire"></i></div>
+                        <div class="stat-details">
+                            <h3>Weekly Workouts</h3>
+                            <p class="stat-number">12</p>
+                            <span class="stat-change positive"><i class="fas fa-arrow-up"></i> +3 from last week</span>
+                        </div>
+                    </div>
+                    <div class="stat-card-dash">
+                        <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                        <div class="stat-details">
+                            <h3>Total Hours</h3>
+                            <p class="stat-number">18.5</p>
+                            <span class="stat-change positive"><i class="fas fa-arrow-up"></i> +2.5 hours</span>
+                        </div>
+                    </div>
+                    <div class="stat-card-dash">
+                        <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                        <div class="stat-details">
+                            <h3>Streak</h3>
+                            <p class="stat-number">15 days</p>
+                            <span class="stat-change positive">Keep it up!</span>
+                        </div>
+                    </div>
+                    <div class="stat-card-dash">
+                        <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="stat-details">
+                            <h3>Goal Progress</h3>
+                            <p class="stat-number">73%</p>
+                            <span class="stat-change">Monthly target</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h2>Upcoming Classes</h2>
+                        <div class="upcoming-classes">
+                            <div class="class-item">
+                                <div class="class-time">Today, 6:00 PM</div>
+                                <div class="class-details">
+                                    <h4>HIIT Bootcamp</h4>
+                                    <p><i class="fas fa-user"></i> Mike Chen | <i class="fas fa-map-marker-alt"></i> Main Floor</p>
+                                </div>
+                            </div>
+                            <div class="class-item">
+                                <div class="class-time">Tomorrow, 8:00 AM</div>
+                                <div class="class-details">
+                                    <h4>Morning Yoga</h4>
+                                    <p><i class="fas fa-user"></i> Sarah Johnson | <i class="fas fa-map-marker-alt"></i> Studio A</p>
+                                </div>
+                            </div>
+                            <div class="class-item">
+                                <div class="class-time">Wed, 7:00 PM</div>
+                                <div class="class-details">
+                                    <h4>Spin & Core</h4>
+                                    <p><i class="fas fa-user"></i> David Lee | <i class="fas fa-map-marker-alt"></i> Spin Studio</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="view-all-btn">View All Classes</button>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h2>Recent Activity</h2>
+                        <div class="activity-feed">
+                            <div class="activity-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <p><strong>Completed:</strong> Full Body Strength</p>
+                                    <span>2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <i class="fas fa-calendar-check"></i>
+                                <div>
+                                    <p><strong>Booked:</strong> Yoga Flow - Friday 6PM</p>
+                                    <span>Yesterday</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <i class="fas fa-trophy"></i>
+                                <div>
+                                    <p><strong>Achievement:</strong> 2-Week Streak!</p>
+                                    <span>2 days ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <i class="fas fa-chart-line"></i>
+                                <div>
+                                    <p><strong>Progress:</strong> Lost 2 lbs this week</p>
+                                    <span>3 days ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h2>Weekly Activity Chart</h2>
+                    <div class="chart-container">
+                        <canvas id="weeklyChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Workouts Section -->
+            <section id="workouts" class="dashboard-section">
+                <h1>My Workouts</h1>
+                <button class="add-workout-btn" onclick="showAddWorkout()"><i class="fas fa-plus"></i> Log New Workout</button>
+                
+                <div class="workout-list">
+                    <div class="workout-card">
+                        <div class="workout-header">
+                            <h3>Full Body Strength Training</h3>
+                            <span class="workout-date">Today, 2:30 PM</span>
+                        </div>
+                        <div class="workout-details">
+                            <div class="workout-stat"><i class="fas fa-clock"></i> Duration: 60 min</div>
+                            <div class="workout-stat"><i class="fas fa-fire"></i> Calories: 450</div>
+                            <div class="workout-stat"><i class="fas fa-heart"></i> Avg HR: 142 bpm</div>
+                        </div>
+                        <div class="workout-exercises">
+                            <p><strong>Exercises:</strong> Squats, Bench Press, Deadlifts, Pull-ups, Rows</p>
+                        </div>
+                    </div>
+
+                    <div class="workout-card">
+                        <div class="workout-header">
+                            <h3>HIIT Cardio Session</h3>
+                            <span class="workout-date">Yesterday, 6:00 PM</span>
+                        </div>
+                        <div class="workout-details">
+                            <div class="workout-stat"><i class="fas fa-clock"></i> Duration: 45 min</div>
+                            <div class="workout-stat"><i class="fas fa-fire"></i> Calories: 520</div>
+                            <div class="workout-stat"><i class="fas fa-heart"></i> Avg HR: 165 bpm</div>
+                        </div>
+                        <div class="workout-exercises">
+                            <p><strong>Exercises:</strong> Burpees, Mountain Climbers, Jump Squats, High Knees</p>
+                        </div>
+                    </div>
+
+                    <div class="workout-card">
+                        <div class="workout-header">
+                            <h3>Morning Yoga Flow</h3>
+                            <span class="workout-date">Monday, 7:00 AM</span>
+                        </div>
+                        <div class="workout-details">
+                            <div class="workout-stat"><i class="fas fa-clock"></i> Duration: 60 min</div>
+                            <div class="workout-stat"><i class="fas fa-fire"></i> Calories: 180</div>
+                            <div class="workout-stat"><i class="fas fa-heart"></i> Avg HR: 95 bpm</div>
+                        </div>
+                        <div class="workout-exercises">
+                            <p><strong>Type:</strong> Vinyasa Flow with Sarah Johnson</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Booked Classes Section -->
+            <section id="classes" class="dashboard-section">
+                <h1>My Booked Classes</h1>
+                <div class="booked-classes-grid">
+                    <div class="booked-class-card">
+                        <div class="class-date-badge">TODAY</div>
+                        <h3>HIIT Bootcamp</h3>
+                        <p class="class-time"><i class="fas fa-clock"></i> 6:00 PM - 7:00 PM</p>
+                        <p class="class-trainer"><i class="fas fa-user"></i> Mike Chen</p>
+                        <p class="class-location"><i class="fas fa-map-marker-alt"></i> Main Floor</p>
+                        <div class="class-actions">
+                            <button class="btn-secondary">Cancel</button>
+                            <button class="btn-primary">Check In</button>
+                        </div>
+                    </div>
+
+                    <div class="booked-class-card">
+                        <div class="class-date-badge">TOMORROW</div>
+                        <h3>Morning Yoga</h3>
+                        <p class="class-time"><i class="fas fa-clock"></i> 8:00 AM - 9:00 AM</p>
+                        <p class="class-trainer"><i class="fas fa-user"></i> Sarah Johnson</p>
+                        <p class="class-location"><i class="fas fa-map-marker-alt"></i> Studio A</p>
+                        <div class="class-actions">
+                            <button class="btn-secondary">Cancel</button>
+                        </div>
+                    </div>
+
+                    <div class="booked-class-card">
+                        <div class="class-date-badge">WED</div>
+                        <h3>Spin & Core</h3>
+                        <p class="class-time"><i class="fas fa-clock"></i> 7:00 PM - 8:00 PM</p>
+                        <p class="class-trainer"><i class="fas fa-user"></i> David Lee</p>
+                        <p class="class-location"><i class="fas fa-map-marker-alt"></i> Spin Studio</p>
+                        <div class="class-actions">
+                            <button class="btn-secondary">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                <a href="classes.html" class="cta-button">Book More Classes</a>
+            </section>
+
+            <!-- Progress Section -->
+            <section id="progress" class="dashboard-section">
+                <h1>My Progress</h1>
+                <div class="progress-cards">
+                    <div class="progress-card">
+                        <h3>Weight Journey</h3>
+                        <div class="progress-stats">
+                            <div class="stat">
+                                <span>Starting</span>
+                                <strong>165 lbs</strong>
+                            </div>
+                            <div class="stat">
+                                <span>Current</span>
+                                <strong>152 lbs</strong>
+                            </div>
+                            <div class="stat">
+                                <span>Goal</span>
+                                <strong>145 lbs</strong>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                        <p class="progress-text">65% to goal • 13 lbs lost • 7 lbs to go</p>
+                    </div>
+
+                    <div class="progress-card">
+                        <h3>Strength Goals</h3>
+                        <div class="strength-goals">
+                            <div class="goal-item">
+                                <span>Bench Press</span>
+                                <div class="goal-progress">
+                                    <div class="goal-bar"><div style="width: 80%"></div></div>
+                                    <span>120/150 lbs</span>
+                                </div>
+                            </div>
+                            <div class="goal-item">
+                                <span>Squat</span>
+                                <div class="goal-progress">
+                                    <div class="goal-bar"><div style="width: 70%"></div></div>
+                                    <span>175/250 lbs</span>
+                                </div>
+                            </div>
+                            <div class="goal-item">
+                                <span>Deadlift</span>
+                                <div class="goal-progress">
+                                    <div class="goal-bar"><div style="width: 75%"></div></div>
+                                    <span>225/300 lbs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h2>Body Measurements</h2>
+                    <table class="measurements-table">
+                        <thead>
+                            <tr>
+                                <th>Measurement</th>
+                                <th>Starting</th>
+                                <th>Current</th>
+                                <th>Change</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Chest</td>
+                                <td>38"</td>
+                                <td>36"</td>
+                                <td class="positive">-2"</td>
+                            </tr>
+                            <tr>
+                                <td>Waist</td>
+                                <td>32"</td>
+                                <td>28"</td>
+                                <td class="positive">-4"</td>
+                            </tr>
+                            <tr>
+                                <td>Hips</td>
+                                <td>40"</td>
+                                <td>37"</td>
+                                <td class="positive">-3"</td>
+                            </tr>
+                            <tr>
+                                <td>Body Fat %</td>
+                                <td>28%</td>
+                                <td>22%</td>
+                                <td class="positive">-6%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="dashboard-section">
+                <h1>Account Settings</h1>
+                <div class="settings-card">
+                    <h3>Personal Information</h3>
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" value="Sarah Johnson">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" value="sarah.johnson@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" value="(555) 123-4567">
+                        </div>
+                        <button type="submit" class="btn-primary">Save Changes</button>
+                    </form>
+                </div>
+
+                <div class="settings-card">
+                    <h3>Membership Details</h3>
+                    <div class="membership-info">
+                        <p><strong>Plan:</strong> Premium Monthly</p>
+                        <p><strong>Status:</strong> <span class="status-active">Active</span></p>
+                        <p><strong>Next Billing:</strong> November 15, 2024</p>
+                        <p><strong>Amount:</strong> $99.00/month</p>
+                        <button class="btn-secondary">Manage Membership</button>
+                    </div>
+                </div>
+
+                <div class="settings-card">
+                    <h3>Notification Preferences</h3>
+                    <div class="notification-settings">
+                        <label class="switch-label">
+                            <input type="checkbox" checked>
+                            <span class="switch"></span>
+                            Class Reminders
+                        </label>
+                        <label class="switch-label">
+                            <input type="checkbox" checked>
+                            <span class="switch"></span>
+                            Workout Achievements
+                        </label>
+                        <label class="switch-label">
+                            <input type="checkbox">
+                            <span class="switch"></span>
+                            Promotional Emails
+                        </label>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="chatbot-widget" id="chatbot">
+        <div class="chatbot-header" onclick="toggleChatbot()">
+            <i class="fas fa-comments"></i><span>Fitness Assistant</span><i class="fas fa-chevron-down" id="chatToggle"></i>
+        </div>
+        <div class="chatbot-body" id="chatbotBody">
+            <div class="chat-messages" id="chatMessages">
+                <div class="bot-message"><p>Hi! How can I help you today?</p></div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Type your question..." onkeypress="handleChatEnter(event)">
+                <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

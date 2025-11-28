@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book gym classes and personal trainer appointments at PulseFit Center">
+    <title>Book Classes & Trainers - PulseFit Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-extended.css">
+    <link rel="stylesheet" href="booking-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-dumbbell" aria-hidden="true"></i>
+                <span>PULSE<strong>FIT</strong></span>
+            </div>
+            <ul class="nav-menu" id="navMenu" role="menubar">
+                <li role="none"><a href="index.html" role="menuitem">HOME</a></li>
+                <li role="none"><a href="about.html" role="menuitem">ABOUT</a></li>
+                <li role="none"><a href="membership.html" role="menuitem">MEMBERSHIP</a></li>
+                <li role="none"><a href="classes.html" role="menuitem">CLASSES</a></li>
+                <li role="none"><a href="trainers.html" role="menuitem">TRAINERS</a></li>
+                <li role="none"><a href="booking.html" class="active" role="menuitem">BOOK NOW</a></li>
+                <li role="none"><a href="blog.html" role="menuitem">BLOG</a></li>
+                <li role="none"><a href="contact.html" role="menuitem">CONTACT</a></li>
+                <li role="none"><a href="dashboard.html" class="dashboard-link" role="menuitem"><i class="fas fa-user-circle" aria-hidden="true"></i> DASHBOARD</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger" role="button" aria-label="Toggle navigation menu" aria-expanded="false" tabindex="0">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero booking-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>BOOK YOUR SESSION</h1>
+            <p>Reserve classes and trainer appointments instantly</p>
+        </div>
+    </section>
+
+    <!-- Booking System Container -->
+    <section class="booking-section">
+        <div class="container">
+            <!-- Booking Type Selector -->
+            <div class="booking-tabs" role="tablist" aria-label="Booking options">
+                <button class="booking-tab active" data-tab="classes" role="tab" aria-selected="true" aria-controls="classes-panel" id="classes-tab">
+                    <i class="fas fa-users" aria-hidden="true"></i>
+                    <span>Group Classes</span>
+                </button>
+                <button class="booking-tab" data-tab="trainer" role="tab" aria-selected="false" aria-controls="trainer-panel" id="trainer-tab">
+                    <i class="fas fa-user-tie" aria-hidden="true"></i>
+                    <span>Personal Trainer</span>
+                </button>
+            </div>
+
+            <!-- Group Classes Booking Panel -->
+            <div id="classes-panel" class="booking-panel active" role="tabpanel" aria-labelledby="classes-tab">
+                <div class="booking-grid">
+                    <!-- Calendar Section -->
+                    <div class="calendar-section">
+                        <h2>Select Date</h2>
+                        <div class="calendar-container">
+                            <div class="calendar-header">
+                                <button class="calendar-nav" id="prevMonth" aria-label="Previous month">
+                                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                                </button>
+                                <h3 id="currentMonth" aria-live="polite">October 2024</h3>
+                                <button class="calendar-nav" id="nextMonth" aria-label="Next month">
+                                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="calendar-weekdays" role="row">
+                                <div class="weekday" role="columnheader">Sun</div>
+                                <div class="weekday" role="columnheader">Mon</div>
+                                <div class="weekday" role="columnheader">Tue</div>
+                                <div class="weekday" role="columnheader">Wed</div>
+                                <div class="weekday" role="columnheader">Thu</div>
+                                <div class="weekday" role="columnheader">Fri</div>
+                                <div class="weekday" role="columnheader">Sat</div>
+                            </div>
+                            <div class="calendar-days" id="calendarDays" role="grid" aria-label="Calendar grid">
+                                <!-- Calendar days will be generated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Available Classes Section -->
+                    <div class="classes-section">
+                        <h2>Available Classes <span id="selectedDate">Today</span></h2>
+                        <div class="classes-filter">
+                            <select id="classTypeFilter" aria-label="Filter by class type">
+                                <option value="all">All Classes</option>
+                                <option value="yoga">Yoga</option>
+                                <option value="hiit">HIIT</option>
+                                <option value="strength">Strength</option>
+                                <option value="cardio">Cardio</option>
+                                <option value="spin">Spin</option>
+                            </select>
+                        </div>
+                        <div class="available-classes" id="availableClasses">
+                            <!-- Classes will be loaded by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- My Bookings Section -->
+                <div class="my-bookings">
+                    <h2>My Upcoming Bookings</h2>
+                    <div class="bookings-list" id="bookingsList">
+                        <!-- User bookings will be displayed here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Trainer Booking Panel -->
+            <div id="trainer-panel" class="booking-panel" role="tabpanel" aria-labelledby="trainer-tab" hidden>
+                <div class="booking-grid">
+                    <!-- Trainer Selection -->
+                    <div class="trainer-selection">
+                        <h2>Select Your Trainer</h2>
+                        <div class="trainers-list" id="trainersList">
+                            <!-- Trainers will be loaded by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Appointment Booking -->
+                    <div class="appointment-booking">
+                        <h2>Schedule Appointment</h2>
+                        <form class="booking-form" id="trainerBookingForm" novalidate>
+                            <div class="form-group">
+                                <label for="appointmentDate">Select Date *</label>
+                                <input type="date" id="appointmentDate" required aria-required="true">
+                                <span class="error-message" role="alert"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="appointmentTime">Select Time *</label>
+                                <select id="appointmentTime" required aria-required="true">
+                                    <option value="">Choose a time slot</option>
+                                    <!-- Time slots will be generated by JavaScript -->
+                                </select>
+                                <span class="error-message" role="alert"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="sessionType">Session Type *</label>
+                                <select id="sessionType" required aria-required="true">
+                                    <option value="">Select session type</option>
+                                    <option value="consultation">Initial Consultation (30 min)</option>
+                                    <option value="standard">Standard Session (60 min)</option>
+                                    <option value="extended">Extended Session (90 min)</option>
+                                    <option value="assessment">Fitness Assessment (45 min)</option>
+                                </select>
+                                <span class="error-message" role="alert"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="sessionGoals">Session Goals</label>
+                                <textarea id="sessionGoals" rows="4" placeholder="What would you like to focus on?"></textarea>
+                            </div>
+                            <div class="selected-trainer-info" id="selectedTrainerInfo">
+                                <p>Please select a trainer to continue</p>
+                            </div>
+                            <button type="submit" class="btn-primary" disabled id="bookTrainerBtn">
+                                <i class="fas fa-calendar-check" aria-hidden="true"></i> Book Appointment
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Confirmation Modal -->
+    <div class="modal" id="bookingModal" role="dialog" aria-labelledby="modalTitle" aria-modal="true" hidden>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-icon success">
+                <i class="fas fa-check-circle" aria-hidden="true"></i>
+            </div>
+            <h2 id="modalTitle">Booking Confirmed!</h2>
+            <div class="modal-body" id="modalBody">
+                <!-- Booking details will be inserted here -->
+            </div>
+            <div class="modal-actions">
+                <button class="btn-primary" onclick="closeModal()">Done</button>
+                <button class="btn-secondary" onclick="addToCalendar()">Add to Calendar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fas fa-dumbbell" aria-hidden="true"></i>
+                        <span>PULSE<strong>FIT</strong></span>
+                    </div>
+                    <p>Transform your body and elevate your life with professional training and expert guidance.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="classes.html">Classes</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 123 Fitness Avenue, New York, NY 10001</li>
+                        <li><i class="fas fa-phone" aria-hidden="true"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i> info@pulsefitcenter.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PulseFit Center. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="booking.js"></script>
+</body>
+</html>

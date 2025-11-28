@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Choose from flexible membership plans at PulseFit Center. Monthly, annual, and premium options available.">
+    <title>Membership Plans - PulseFit Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-extended.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sticky Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-dumbbell"></i>
+                <span>PULSE<strong>FIT</strong></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="membership.html" class="active">MEMBERSHIP</a></li>
+                <li><a href="classes.html">CLASSES</a></li>
+                <li><a href="trainers.html">TRAINERS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="dashboard.html" class="dashboard-link"><i class="fas fa-user-circle"></i> DASHBOARD</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <h1 data-animate>MEMBERSHIP PLANS</h1>
+            <p data-animate>Find the Perfect Plan for Your Fitness Journey</p>
+        </div>
+    </section>
+
+    <!-- Pricing Plans Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="section-title" data-animate>CHOOSE YOUR PLAN</h2>
+            <p class="section-subtitle" data-animate>All memberships include access to our world-class facilities</p>
+            
+            <div class="pricing-grid">
+                <!-- Monthly Plan -->
+                <div class="pricing-card" data-animate>
+                    <div class="plan-header">
+                        <h3>MONTHLY</h3>
+                        <div class="plan-price">
+                            <span class="currency">$</span>
+                            <span class="amount">49</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p class="plan-description">Perfect for getting started</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Full Gym Access</li>
+                        <li><i class="fas fa-check"></i> Cardio & Strength Equipment</li>
+                        <li><i class="fas fa-check"></i> Group Fitness Classes</li>
+                        <li><i class="fas fa-check"></i> Locker & Shower Facilities</li>
+                        <li><i class="fas fa-check"></i> Free Fitness Assessment</li>
+                        <li><i class="fas fa-check"></i> Mobile App Access</li>
+                        <li><i class="fas fa-times"></i> Personal Training Sessions</li>
+                        <li><i class="fas fa-times"></i> Nutrition Consultation</li>
+                        <li><i class="fas fa-times"></i> Guest Passes</li>
+                    </ul>
+                    <button class="plan-button" onclick="selectPlan('monthly')">CHOOSE MONTHLY</button>
+                </div>
+
+                <!-- Annual Plan (Featured) -->
+                <div class="pricing-card featured" data-animate>
+                    <div class="popular-badge">BEST VALUE</div>
+                    <div class="plan-header">
+                        <h3>ANNUAL</h3>
+                        <div class="plan-price">
+                            <span class="currency">$</span>
+                            <span class="amount">499</span>
+                            <span class="period">/year</span>
+                        </div>
+                        <p class="plan-description">Save $89 with annual commitment</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Everything in Monthly</li>
+                        <li><i class="fas fa-check"></i> 2 Personal Training Sessions/Month</li>
+                        <li><i class="fas fa-check"></i> Priority Class Booking</li>
+                        <li><i class="fas fa-check"></i> Quarterly Nutrition Consultation</li>
+                        <li><i class="fas fa-check"></i> 2 Guest Passes/Month</li>
+                        <li><i class="fas fa-check"></i> 10% Discount on Supplements</li>
+                        <li><i class="fas fa-check"></i> Body Composition Analysis</li>
+                        <li><i class="fas fa-check"></i> Workout Plan Customization</li>
+                        <li><i class="fas fa-check"></i> Free PulseFit Merchandise</li>
+                    </ul>
+                    <button class="plan-button" onclick="selectPlan('annual')">CHOOSE ANNUAL</button>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="pricing-card premium" data-animate>
+                    <div class="premium-badge">PREMIUM</div>
+                    <div class="plan-header">
+                        <h3>PREMIUM</h3>
+                        <div class="plan-price">
+                            <span class="currency">$</span>
+                            <span class="amount">99</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p class="plan-description">Ultimate fitness experience</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Everything in Annual</li>
+                        <li><i class="fas fa-check"></i> Unlimited Personal Training</li>
+                        <li><i class="fas fa-check"></i> 24/7 Gym Access</li>
+                        <li><i class="fas fa-check"></i> Private Training Area Access</li>
+                        <li><i class="fas fa-check"></i> Monthly Nutrition Consultation</li>
+                        <li><i class="fas fa-check"></i> Unlimited Guest Passes</li>
+                        <li><i class="fas fa-check"></i> Spa & Recovery Services</li>
+                        <li><i class="fas fa-check"></i> Personalized Meal Plans</li>
+                        <li><i class="fas fa-check"></i> Premium Parking Spot</li>
+                    </ul>
+                    <button class="plan-button" onclick="selectPlan('premium')">CHOOSE PREMIUM</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table Section -->
+    <section class="comparison-section">
+        <div class="container">
+            <h2 class="section-title" data-animate>DETAILED PLAN COMPARISON</h2>
+            <div class="table-responsive" data-animate>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Features</th>
+                            <th>Monthly<br><span class="price">$49/mo</span></th>
+                            <th class="featured-col">Annual<br><span class="price">$499/yr</span></th>
+                            <th>Premium<br><span class="price">$99/mo</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Gym Access Hours</strong></td>
+                            <td>5 AM - 11 PM</td>
+                            <td class="featured-col">5 AM - 11 PM</td>
+                            <td>24/7 Access</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cardio Equipment</strong></td>
+                            <td><i class="fas fa-check text-green"></i></td>
+                            <td class="featured-col"><i class="fas fa-check text-green"></i></td>
+                            <td><i class="fas fa-check text-green"></i></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Strength Equipment</strong></td>
+                            <td><i class="fas fa-check text-green"></i></td>
+                            <td class="featured-col"><i class="fas fa-check text-green"></i></td>
+                            <td><i class="fas fa-check text-green"></i></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Group Fitness Classes</strong></td>
+                            <td>Unlimited</td>
+                            <td class="featured-col">Unlimited + Priority</td>
+                            <td>Unlimited + Priority</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Personal Training Sessions</strong></td>
+                            <td><i class="fas fa-times text-red"></i></td>
+                            <td class="featured-col">2 per month</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nutrition Consultation</strong></td>
+                            <td><i class="fas fa-times text-red"></i></td>
+                            <td class="featured-col">Quarterly</td>
+                            <td>Monthly</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Guest Passes</strong></td>
+                            <td><i class="fas fa-times text-red"></i></td>
+                            <td class="featured-col">2 per month</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Locker & Shower</strong></td>
+                            <td><i class="fas fa-check text-green"></i></td>
+                            <td class="featured-col"><i class="fas fa-check text-green"></i></td>
+                            <td><i class="fas fa-check text-green"></i></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mobile App Access</strong></td>
+                            <td><i class="fas fa-check text-green"></i></td>
+                            <td class="featured-col"><i class="fas fa-check text-green"></i></td>
+                            <td><i class="fas fa-check text-green"></i></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Spa & Recovery Services</strong></td>
+                            <td><i class="fas fa-times text-red"></i></td>
+                            <td class="featured-col"><i class="fas fa-times text-red"></i></td>
+                            <td><i class="fas fa-check text-green"></i></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Body Composition Analysis</strong></td>
+                            <td><i class="fas fa-times text-red"></i></td>
+                            <td class="featured-col">Quarterly</td>
+                            <td>Monthly</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Supplements Discount</strong></td>
+                            <td><i class="fas fa-times text-red"></i></td>
+                            <td class="featured-col">10%</td>
+                            <td>20%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Private Training Area</strong></td>
+                            <td><i class="fas fa-times text-red"></i></td>
+                            <td class="featured-col"><i class="fas fa-times text-red"></i></td>
+                            <td><i class="fas fa-check text-green"></i></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Personalized Meal Plans</strong></td>
+                            <td><i class="fas fa-times text-red"></i></td>
+                            <td class="featured-col"><i class="fas fa-times text-red"></i></td>
+                            <td><i class="fas fa-check text-green"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add-ons Section -->
+    <section class="addons-section">
+        <div class="container">
+            <h2 class="section-title" data-animate>ENHANCE YOUR MEMBERSHIP</h2>
+            <p class="section-subtitle" data-animate>Add these services to any membership plan</p>
+            <div class="addons-grid">
+                <div class="addon-card" data-animate>
+                    <i class="fas fa-user-friends"></i>
+                    <h3>Personal Training Package</h3>
+                    <p class="addon-price">$199/month</p>
+                    <p>4 one-on-one sessions with certified trainers</p>
+                    <button class="addon-button">ADD TO PLAN</button>
+                </div>
+                <div class="addon-card" data-animate>
+                    <i class="fas fa-apple-alt"></i>
+                    <h3>Nutrition Coaching</h3>
+                    <p class="addon-price">$149/month</p>
+                    <p>Monthly consultations and personalized meal plans</p>
+                    <button class="addon-button">ADD TO PLAN</button>
+                </div>
+                <div class="addon-card" data-animate>
+                    <i class="fas fa-spa"></i>
+                    <h3>Recovery & Spa Package</h3>
+                    <p class="addon-price">$99/month</p>
+                    <p>4 massage sessions and unlimited spa access</p>
+                    <button class="addon-button">ADD TO PLAN</button>
+                </div>
+                <div class="addon-card" data-animate>
+                    <i class="fas fa-utensils"></i>
+                    <h3>Meal Prep Service</h3>
+                    <p class="addon-price">$249/month</p>
+                    <p>Weekly healthy meals delivered to the gym</p>
+                    <button class="addon-button">ADD TO PLAN</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title" data-animate>FREQUENTLY ASKED QUESTIONS</h2>
+            <div class="faq-container">
+                <div class="faq-item" data-animate>
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Can I cancel my membership anytime?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Monthly memberships can be cancelled with 30 days notice. Annual memberships require 60 days notice but offer significant savings. Premium memberships are flexible with 30 days notice.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-animate>
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Is there a joining fee?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We currently have a promotional offer with no joining fees for new members. Standard joining fee is $50 when not on promotion.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-animate>
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Can I freeze my membership?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, you can freeze your membership for up to 3 months per year for a small monthly fee of $10. This is perfect for vacations or temporary circumstances.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-animate>
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Do you offer student or military discounts?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We offer 20% off monthly memberships for students with valid ID and 25% off for active military personnel and veterans.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-animate>
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What payment methods do you accept?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept all major credit cards, debit cards, bank transfers, and digital payment methods like PayPal and Apple Pay.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 data-animate>START YOUR FITNESS JOURNEY TODAY</h2>
+            <p data-animate>Join PulseFit Center and transform your life with our world-class facilities</p>
+            <a href="contact.html" class="cta-button large pulse-btn" data-animate>CONTACT US TO JOIN</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>PULSE<strong>FIT</strong></span>
+                    </div>
+                    <p>Transform your body and elevate your life with professional training and expert guidance.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="classes.html">Classes</a></li>
+                        <li><a href="trainers.html">Trainers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Business Hours</h3>
+                    <ul class="hours-list">
+                        <li><span>Monday - Friday:</span> 5:00 AM - 11:00 PM</li>
+                        <li><span>Saturday:</span> 6:00 AM - 10:00 PM</li>
+                        <li><span>Sunday:</span> 7:00 AM - 9:00 PM</li>
+                        <li><span>24/7 Access:</span> Premium Members</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fitness Avenue, New York, NY 10001</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@pulsefitcenter.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PulseFit Center. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbot">
+        <div class="chatbot-header" onclick="toggleChatbot()">
+            <i class="fas fa-comments"></i>
+            <span>Fitness Assistant</span>
+            <i class="fas fa-chevron-down" id="chatToggle"></i>
+        </div>
+        <div class="chatbot-body" id="chatbotBody">
+            <div class="chat-messages" id="chatMessages">
+                <div class="bot-message">
+                    <p>Hi! I'm your PulseFit AI assistant. Ask me about membership, classes, or schedules!</p>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Type your question..." onkeypress="handleChatEnter(event)">
+                <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
